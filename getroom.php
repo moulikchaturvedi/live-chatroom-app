@@ -7,7 +7,7 @@ if (strlen($room)>20 or strlen($room)<2)
     $message = 'Room name should be between 2 and 20 characters';
     echo '<script language="javascript">';
     echo 'alert("'.$message.'");';
-    echo 'window.location="http://localhost/myprojects/live-chatroom-app";';
+    echo 'window.location="/";';
     echo '</script>';
 }
 
@@ -16,7 +16,7 @@ else if(!ctype_alnum($room))
     $message = 'Room name should be alphanumeric';
     echo '<script language="javascript">';
     echo 'alert("'.$message.'");';
-    echo 'window.location="http://localhost/myprojects/live-chatroom-app";';
+    echo 'window.location="/";';
     echo '</script>';
     
 }
@@ -40,7 +40,7 @@ if($result)
         $message = 'This room is already claimed. Please choose a different room.';
         echo '<script language="javascript">';
         echo 'alert("'.$message.'");';
-        echo 'window.location="http://localhost/myprojects/live-chatroom-app";';
+        echo 'window.location="/";';
         echo '</script>';
     }
 
@@ -53,7 +53,7 @@ if($result)
             $message = 'YOUR ROOM HAS BEEN CREATED!';
             echo '<script language="javascript">';
             echo 'alert("'.$message.'");';
-            echo 'window.location="http://localhost/myprojects/live-chatroom-app/rooms.php?roomname='.$room.'";';
+            echo 'window.location="rooms.php?roomname='.$room.'";';
             echo '</script>';
         }
     }

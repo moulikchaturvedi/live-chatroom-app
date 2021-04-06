@@ -16,7 +16,7 @@ if($result)
         $message = 'This room does not exist. Create a new one!';
             echo '<script language="javascript">';
             echo 'alert("'.$message.'");';
-            echo 'window.location="http://localhost/myprojects/live-chatroom-app/rooms.php?roomname='.$room.'";';
+            echo 'window.location="rooms.php?roomname='.$room.'";';
             echo '</script>';
     }
 }
