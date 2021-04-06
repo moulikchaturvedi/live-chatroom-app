@@ -115,13 +115,7 @@ body {
 <h2>Room ID - <?php echo $roomname ?></h2>
 
 <div class="anyClass">
-<div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Hello. How are you today?</p>
-  <span class="time-right">11:00</span>
-</div>
-
-</div>
+<div class="container"></div></div>
 
 <input type="text" class="form-control" name="usermsg" id="usermsg" placeholder="Enter your message" val=""><br>
 <button class="btn btn-default text-white" name="submitmsg" id="submitmsg" style="border: 2px solid white;">SEND</button>
@@ -130,6 +124,21 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+
+setInterval(runfunction, 1000);
+function runfunction() 
+{
+    $.post("htcont.php", {room: '<?php echo $roomname ?>'},
+        function(data, status)
+        {
+            document.getElementsByClassName('anyClass')[0].innerHTML = data;
+        }
+
+    )
+}
+
+
+
 
 // Get the input field
 var input = document.getElementById("usermsg");
